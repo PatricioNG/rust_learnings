@@ -84,3 +84,16 @@ fn value_in_cents(coin: Coin) -> u8 {
         }
     }
 }
+
+//Ex of using if let instead of match to achieve something similar
+fn value_in_cents2(coin: Coin) -> u32 {
+    let mut count = 0;
+
+    if let Coin::Quarter(currency) = coin {
+        println!("This is a {:?} quarter", currency);
+    } else {
+        count += 1;
+    };
+
+    count
+}
